@@ -212,10 +212,17 @@ body {
 
 /* Instructor Section */
 .instructor-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
-    align-items: start;
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary-color);
+}
+
+.instructor-bio {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .instructor-bio h3 {
@@ -223,38 +230,43 @@ body {
     font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-sm);
     margin-top: 0;
+    font-weight: 700;
+}
+
+.instructor-bio p {
+    font-style: italic;
+    margin-bottom: 0;
 }
 
 .contact-info {
-    background: white;
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .contact-field {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--spacing-sm);
+    display: flex;
+    align-items: flex-start;
     margin-bottom: var(--spacing-sm);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .contact-field:last-child {
-    border-bottom: none;
     margin-bottom: 0;
-    padding-bottom: 0;
 }
 
 .contact-field .label {
     font-weight: 600;
-    color: var(--text-dark);
-    align-self: start;
+    color: var(--primary-color);
+    min-width: 120px;
+    flex-shrink: 0;
 }
 
 .contact-field .value {
-    color: var(--text-light);
+    color: var(--text-dark);
+    flex: 1;
 }
 
 .contact-field .value a {
@@ -491,8 +503,7 @@ body {
     }
     
     .instructor-info {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
     }
     
     .workshops-grid {
@@ -506,8 +517,12 @@ body {
     }
     
     .contact-field {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 5px;
+    }
+
+    .contact-field .label {
+        min-width: auto;
     }
     
     .date-item {
@@ -547,8 +562,11 @@ body {
     
     .workshop-card,
     .grading-breakdown,
-    .dates-list,
-    .contact-info {
+    .dates-list {
+        padding: var(--spacing-sm);
+    }
+
+    .instructor-info {
         padding: var(--spacing-sm);
     }
 }

@@ -356,63 +356,75 @@ body {
     margin-bottom: 0;
 }
 
-/* Workshop Grid */
-.workshops-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
-}
-
-.workshop-card {
+/* Course Schedule Table */
+.schedule-table-container {
     background: white;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    padding: var(--spacing-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    margin-top: var(--spacing-md);
 }
 
-.workshop-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.workshop-card h3 {
-    color: var(--primary-color);
-    font-size: var(--font-size-large);
-    margin-bottom: var(--spacing-sm);
-    margin-top: 0;
-}
-
-.workshop-details {
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
     font-size: var(--font-size-small);
 }
 
-.workshop-date {
+.schedule-table thead {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: white;
+}
+
+.schedule-table thead th {
+    padding: var(--spacing-sm) var(--spacing-xs);
+    text-align: left;
+    font-weight: 600;
+    font-size: var(--font-size-small);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.schedule-table thead th:last-child {
+    border-right: none;
+}
+
+.schedule-table tbody tr {
+    border-bottom: 1px solid var(--border);
+}
+
+.schedule-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+.schedule-table tbody td {
+    padding: var(--spacing-sm) var(--spacing-xs);
+    vertical-align: top;
+    color: var(--text-dark);
+}
+
+.schedule-table .section-header {
+    background: var(--section-bg) !important;
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 5px;
+    border-top: 2px solid var(--primary-color);
 }
 
-.workshop-time {
-    color: var(--text-light);
-    margin-bottom: var(--spacing-sm);
+.schedule-table .section-header td {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    text-align: center;
 }
 
-.workshop-focus {
-    color: var(--secondary-color);
-    margin-bottom: var(--spacing-sm);
-}
-
-.workshop-description {
-    color: var(--text-light);
-    line-height: 1.5;
-}
-
-.schedule-intro {
-    font-size: var(--font-size-large);
-    color: var(--text-dark);
-    margin-bottom: var(--spacing-md);
+.schedule-table tbody tr:hover.section-header {
+    background: var(--section-bg) !important;
 }
 
 /* Important Dates */
@@ -506,9 +518,12 @@ body {
         padding: var(--spacing-sm);
     }
     
-    .workshops-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
+    .schedule-table-container {
+        overflow-x: auto;
+    }
+
+    .schedule-table {
+        min-width: 600px;
     }
     
     .grade-item {
@@ -560,10 +575,10 @@ body {
         font-size: var(--font-size-xl);
     }
     
-    .workshop-card,
     .grading-breakdown,
-    .dates-list {
-        padding: var(--spacing-sm);
+    .dates-list,
+    .schedule-table-container {
+        padding: 0;
     }
 
     .instructor-info {

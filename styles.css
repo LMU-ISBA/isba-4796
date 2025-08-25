@@ -285,70 +285,152 @@ body {
     margin-top: 2px;
 }
 
-/* Objectives List */
-.objectives-list {
+/* Learning Outcomes Card */
+.learning-outcomes-card {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-light);
+}
+
+.learning-outcomes-card h2 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+    margin-top: 0;
+}
+
+.learning-outcomes-card p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.bullet-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.objectives-list li {
-    background: white;
+.bullet-list li {
+    position: relative;
+    padding-left: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-    border-left: 4px solid var(--primary-color);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-.objectives-list li:before {
-    content: "✓";
-    color: var(--primary-color);
+.bullet-list li:before {
+    content: "•";
+    color: var(--text-dark);
     font-weight: bold;
-    margin-right: var(--spacing-sm);
+    position: absolute;
+    left: 0;
 }
 
-/* Grading Section */
-.grading-breakdown {
+/* Deliverables Table */
+.deliverables-table-container {
     background: white;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-    padding: var(--spacing-md);
+    box-shadow: var(--shadow);
+    overflow: hidden;
     margin-bottom: var(--spacing-md);
 }
 
-.grade-item {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
-    padding-bottom: var(--spacing-sm);
+.deliverables-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.deliverables-table thead {
+    background: #6b7280;
+    color: white;
+}
+
+.deliverables-table thead th {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+}
+
+.deliverables-table thead th:last-child {
+    text-align: center;
+}
+
+.deliverables-table tbody tr {
     border-bottom: 1px solid var(--border);
 }
 
-.grade-item:last-child {
+.deliverables-table tbody tr:last-child {
     border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 
-.grade-category {
+.deliverables-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.deliverables-table tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+.deliverables-table tbody td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    vertical-align: top;
+    color: var(--text-dark);
+}
+
+.deliverables-table tbody td:last-child {
+    text-align: center;
     font-weight: 600;
-    color: var(--primary-color);
+    font-size: var(--font-size-large);
 }
 
-.grade-description {
-    color: var(--text-light);
+.deliverables-table tbody td div {
+    margin-bottom: 2px;
+}
+
+.deliverables-table tbody td div:last-child {
+    margin-bottom: 0;
+}
+
+.deliverables-table tfoot {
+    background: #f3f4f6;
+    border-top: 2px solid var(--primary-color);
+}
+
+.deliverables-table tfoot td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.deliverables-table tfoot td:last-child {
+    text-align: center;
+    font-size: var(--font-size-large);
+}
+
+.grade-scale-container {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-light);
+}
+
+.grade-scale-container h3 {
+    margin: 0 0 var(--spacing-sm) 0;
+    color: var(--text-dark);
 }
 
 .grade-scale-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-sm);
 }
 
 .grade-card {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     border-radius: var(--border-radius);
     text-align: center;
     border: 3px solid;
@@ -361,13 +443,13 @@ body {
 }
 
 .grade-letter {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
     font-weight: 700;
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: 4px;
 }
 
 .grade-percentage {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-small);
     font-weight: 500;
 }
 
@@ -686,6 +768,14 @@ body {
 
     .schedule-table {
         min-width: 600px;
+    }
+    
+    .deliverables-table-container {
+        overflow-x: auto;
+    }
+    
+    .deliverables-table {
+        min-width: 400px;
     }
     
     .grade-item {

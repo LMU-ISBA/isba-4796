@@ -378,7 +378,7 @@ body {
 
 .schedule-table thead th {
     padding: var(--spacing-sm) var(--spacing-xs);
-    text-align: left;
+    text-align: center;
     font-weight: 600;
     font-size: var(--font-size-small);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
@@ -407,6 +407,7 @@ body {
 .schedule-table tbody td {
     padding: var(--spacing-sm) var(--spacing-xs);
     vertical-align: top;
+    text-align: center;
     color: var(--text-dark);
 }
 
@@ -442,12 +443,12 @@ body {
 }
 
 .schedule-table .due-header-cell {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-    color: white !important;
+    background: var(--section-bg) !important;
+    color: var(--text-dark) !important;
     font-weight: 600;
     text-align: center;
     padding: var(--spacing-sm) var(--spacing-xs) !important;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-top: 2px solid var(--primary-color);
 }
 
 /* Important Dates */

@@ -340,20 +340,100 @@ body {
     color: var(--text-light);
 }
 
-.grade-scale {
-    background: var(--section-bg);
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius);
-    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
-    font-size: var(--font-size-small);
+.grade-scale-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
 }
 
-.grade-range {
+.grade-card {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 3px solid;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grade-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.grade-letter {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
     margin-bottom: var(--spacing-xs);
 }
 
-.grade-range:last-child {
-    margin-bottom: 0;
+.grade-percentage {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+}
+
+/* A Grade Colors - Green */
+.grade-a {
+    background-color: #d4f4dd;
+    border-color: #22c55e;
+    color: #166534;
+}
+
+.grade-a-minus {
+    background-color: #d4f4dd;
+    border-color: #22c55e;
+    color: #166534;
+}
+
+/* B Grade Colors - Blue */
+.grade-b-plus {
+    background-color: #dbeafe;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+.grade-b {
+    background-color: #dbeafe;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+.grade-b-minus {
+    background-color: #dbeafe;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+/* C Grade Colors - Yellow */
+.grade-c-plus {
+    background-color: #fef3c7;
+    border-color: #f59e0b;
+    color: #92400e;
+}
+
+.grade-c {
+    background-color: #fef3c7;
+    border-color: #f59e0b;
+    color: #92400e;
+}
+
+.grade-c-minus {
+    background-color: #fef3c7;
+    border-color: #f59e0b;
+    color: #92400e;
+}
+
+/* D Grade Colors - Orange */
+.grade-d {
+    background-color: #fed7aa;
+    border-color: #f97316;
+    color: #c2410c;
+}
+
+/* F Grade Colors - Red */
+.grade-f {
+    background-color: #fecaca;
+    border-color: #ef4444;
+    color: #dc2626;
 }
 
 /* Course Schedule Table */
@@ -458,61 +538,53 @@ body {
     font-size: var(--font-size-base);
 }
 
-/* Policies Section */
-.policies-section {
-    max-width: 900px;
+/* Success Toolkit and Card Styling */
+.success-toolkit {
+    background: #C8C9C7;
+    color: #000000;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
 }
 
-.policies-section h3 {
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #C8C9C7;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.card ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 118, 165, 0.1);
+}
+
+.card h3 {
     color: var(--text-dark);
     font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    margin-top: 0;
     font-weight: 700;
 }
 
-.policies-section h3:first-child {
-    margin-top: 0;
-}
-
-.policies-section h4 {
-    color: var(--text-dark);
-    font-size: var(--font-size-large);
-    margin-bottom: var(--spacing-sm);
-    margin-top: var(--spacing-sm);
-    font-weight: 600;
-}
-
-.policy-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: var(--spacing-md);
-}
-
-.policy-list li {
-    background: white;
-    margin-bottom: var(--spacing-xs);
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-    border-left: 4px solid var(--primary-color);
-    position: relative;
-}
-
-.policy-list li:before {
-    content: "•";
-    color: var(--primary-color);
-    font-weight: bold;
-    margin-right: var(--spacing-sm);
-    font-size: var(--font-size-large);
-}
-
-.policies-section p {
+.card p {
     margin-bottom: var(--spacing-sm);
     line-height: 1.7;
 }
 
-.policies-section p strong {
+.card p strong {
     color: var(--primary-color);
     font-weight: 600;
 }
@@ -618,6 +690,11 @@ body {
     
     .grade-item {
         grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+    
+    .grade-scale-grid {
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-xs);
     }
     

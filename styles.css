@@ -458,6 +458,65 @@ body {
     font-size: var(--font-size-base);
 }
 
+/* Policies Section */
+.policies-section {
+    max-width: 900px;
+}
+
+.policies-section h3 {
+    color: var(--text-dark);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    font-weight: 700;
+}
+
+.policies-section h3:first-child {
+    margin-top: 0;
+}
+
+.policies-section h4 {
+    color: var(--text-dark);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.policy-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.policy-list li {
+    background: white;
+    margin-bottom: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+}
+
+.policy-list li:before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: var(--spacing-sm);
+    font-size: var(--font-size-large);
+}
+
+.policies-section p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.7;
+}
+
+.policies-section p strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 /* Important Dates */
 .dates-list {
     background: white;

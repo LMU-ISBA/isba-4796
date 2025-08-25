@@ -411,6 +411,10 @@ body {
     color: var(--text-dark);
 }
 
+.schedule-table tbody td:nth-child(4) {
+    text-align: left;
+}
+
 .schedule-table .section-header {
     background: var(--section-bg) !important;
     font-weight: 600;
@@ -429,17 +433,20 @@ body {
 }
 
 .schedule-table .header-transition {
-    background: transparent !important;
-    border: none !important;
+    background: var(--section-bg) !important;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-top: 2px solid var(--primary-color);
 }
 
 .schedule-table .header-transition:hover {
-    background: transparent !important;
+    background: var(--section-bg) !important;
 }
 
 .schedule-table .header-transition td {
-    padding: 0;
-    border: none;
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    text-align: center;
 }
 
 .schedule-table .due-header-cell {
@@ -447,8 +454,8 @@ body {
     color: var(--text-dark) !important;
     font-weight: 600;
     text-align: center;
-    padding: var(--spacing-sm) var(--spacing-xs) !important;
-    border-top: 2px solid var(--primary-color);
+    padding: var(--spacing-sm) !important;
+    font-size: var(--font-size-base);
 }
 
 /* Important Dates */

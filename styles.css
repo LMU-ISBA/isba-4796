@@ -427,6 +427,29 @@ body {
     background: var(--section-bg) !important;
 }
 
+.schedule-table .header-transition {
+    background: transparent !important;
+    border: none !important;
+}
+
+.schedule-table .header-transition:hover {
+    background: transparent !important;
+}
+
+.schedule-table .header-transition td {
+    padding: 0;
+    border: none;
+}
+
+.schedule-table .due-header-cell {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: white !important;
+    font-weight: 600;
+    text-align: center;
+    padding: var(--spacing-sm) var(--spacing-xs) !important;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
 /* Important Dates */
 .dates-list {
     background: white;
